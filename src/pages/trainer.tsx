@@ -19,7 +19,7 @@ export default function Trainer() {
             <nav className="hidden md:flex items-center gap-8">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "/trainer" },
+                { name: "trainers", href: "/trainer" }, // <-- เชื่อมไป trainer.tsx
                 { name: "reviews", href: "/review" },
                 { name: "contact us", href: "/contactus" }
               ].map((item) => (
@@ -55,7 +55,7 @@ export default function Trainer() {
             <nav className="flex flex-col gap-6">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "/trainer" },
+                { name: "trainers", href: "/trainer" }, // <-- เชื่อมไป trainer.tsx
                 { name: "reviews", href: "/review" },
                 { name: "contact us", href: "/contactus" }
               ].map((item) => (
@@ -184,8 +184,7 @@ export default function Trainer() {
           </div>
         </div>
       </section>
-
-      {/* ===== Footer ===== */}
+{/* ===== Footer ===== */}
       <footer className="bg-red-600 text-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -206,24 +205,32 @@ export default function Trainer() {
           <div>
             <h5 className="font-bold mb-4">หน้าเรา</h5>
             <ul className="space-y-2 text-red-100 text-sm">
-              <li><a href="/" className="hover:text-white">เกี่ยวกับเรา</a></li>
-              <li><a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a></li>
-              <li><a href="/review" className="hover:text-white">รีวิวลูกค้า</a></li>
-              <li><a href="/contactus" className="hover:text-white">ติดต่อเรา</a></li>
+              <li>
+                <a href="/contactus" className="hover:text-white">เกี่ยวกับเรา</a>
+              </li>
+              <li>
+                <a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a>
+              </li>
+              <li>
+                <a href="/review" className="hover:text-white">รีวิวลูกค้า</a>
+              </li>
+              <li>
+                <a href="/contactus" className="hover:text-white">ติดต่อเรา</a>
+              </li>
             </ul>
           </div>
           <div>
             <h5 className="font-bold mb-4">social links</h5>
             <div className="flex gap-4">
-              <a href="#" className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center hover:bg-blue-700">
+              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                 <span className="text-white text-sm">f</span>
-              </a>
-              <a href="#" className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center hover:bg-pink-600">
+              </div>
+              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">ig</span>
-              </a>
-              <a href="#" className="w-8 h-8 bg-red-500 rounded flex items-center justify-center hover:bg-red-600">
+              </div>
+              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">yt</span>
-              </a>
+              </div>
             </div>
           </div>
         </div>

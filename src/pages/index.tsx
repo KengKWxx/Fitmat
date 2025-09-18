@@ -129,7 +129,9 @@ export default function Home() {
               <p className="mt-5 text-white/90 text-base sm:text-xl max-w-2xl">
                 "ค้นหาเทรนเนอร์ที่ใช่สำหรับคุณ พร้อมจองคิวง่ายในไม่กี่คลิก"
               </p>
-              <button className="mt-6 w-fit rounded-lg bg-white text-black font-semibold px-4 py-2 hover:bg-gray-100 active:bg-gray-200 active:scale-95 transition-all duration-200 cursor-pointer">
+              <button className="mt-6 w-fit rounded-lg bg-white text-black font-bold px-6 py-2 shadow hover:bg-red-500 hover:text-white active:bg-red-600 active:scale-95 transition-all duration-200 cursor-pointer"
+                onClick={() => window.location.href = "/trainer"}
+              >
                 ค้นหาเทรนเนอร์
               </button>
             </div>
@@ -386,7 +388,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== Footer ===== */}
+    {/* ===== Footer ===== */}
       <footer className="bg-red-600 text-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -407,11 +409,19 @@ export default function Home() {
           <div>
             <h5 className="font-bold mb-4">หน้าเรา</h5>
             <ul className="space-y-2 text-red-100 text-sm">
-              <li><a href="/" className="hover:text-white">เกี่ยวกับเรา</a></li>
-              <li><a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a></li> {/* <-- เปลี่ยนตรงนี้ */}
-              <li><a href="#" className="hover:text-white">รีวิวลูกค้า</a></li>
-              <li><a href="/contactus" className="hover:text-white">ติดต่อเรา</a></li>
-          </ul>
+              <li>
+                <a href="/contactus" className="hover:text-white">เกี่ยวกับเรา</a>
+              </li>
+              <li>
+                <a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a>
+              </li>
+              <li>
+                <a href="/review" className="hover:text-white">รีวิวลูกค้า</a>
+              </li>
+              <li>
+                <a href="/contactus" className="hover:text-white">ติดต่อเรา</a>
+              </li>
+            </ul>
           </div>
           <div>
             <h5 className="font-bold mb-4">social links</h5>

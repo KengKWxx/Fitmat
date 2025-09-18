@@ -20,9 +20,9 @@ export default function Contact() {
             <nav className="hidden md:flex items-center gap-8">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "#" },
+                { name: "trainers", href: "/trainer" },
                 { name: "reviews", href: "/review" },
-                { name: "contact us", href: "/contactus" }
+                { name: "contact us", href: "/contactus" },
               ].map((item) => (
                 <a
                   key={item.name}
@@ -57,9 +57,9 @@ export default function Contact() {
             <nav className="flex flex-col gap-4">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "#" },
+                { name: "trainers", href: "/trainer" },
                 { name: "reviews", href: "/review" },
-                { name: "contact us", href: "/contactus" }
+                { name: "contact us", href: "/contactus" },
               ].map((item) => (
                 <a
                   key={item.name}
@@ -111,30 +111,19 @@ export default function Contact() {
                 ไม่ว่าจะเป็นการลดน้ำหนัก เพิ่มกล้ามเนื้อ หรือเสริมสร้างสุขภาพ
               </p>
 
-              {/* แผนที่ */}
+              {/* แผนที่จริง */}
               <div className="bg-white rounded-lg overflow-hidden shadow-lg mb-8">
-                <div className="h-64 relative bg-green-100">
-                  {/* แผนที่แบบ iframe จาก Google Maps */}
+                <div className="h-64 relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5446449889434!2d100.19329931539204!3d14.041844290151563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e27ee8c7f1c5cd%3A0x8a3e3c0a3c0a3c0a!2z4Lir4Lit4Lie4Lix4LiB4LiZ4LiB4Lir4Li54LiB4LmAIDQg4LiB4Liz4LmB4Lie4LiH4LmB4Liq4LiZ!5e0!3m2!1sth!2sth!4v1694000000000!5m2!1sth!2sth"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.86173820629546!2d99.9786041114656!3d14.024302659372566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2ff840365e223%3A0x186beebdd6a65428!2z4Liq4Liy4LiC4Liy4Lin4Li04LiK4Liy4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Liq4Liy4Lij4Liq4LiZ4LmA4LiX4LioIOC4hOC4k-C4sOC4qOC4tOC4peC4m-C4qOC4suC4quC4leC4o-C5jOC5geC4peC4sOC4p-C4tOC4l-C4ouC4suC4qOC4suC4quC4leC4o-C5jA!5e0!3m2!1sth!2sth!4v1758218210147!5m2!1sth!2sth"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="แผนที่หอพักนกฮูก4 กำแพงแสน"
+                    title="แผนที่ใหม่"
                   />
-                  
-                  {/* Fallback กรณีที่ iframe ไม่แสดง */}
-                  <div className="absolute inset-0 bg-green-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <div className="w-8 h-8 bg-white rounded-full"></div>
-                      </div>
-                      <p className="text-gray-600 font-medium">หอพักนกฮูก4 กำแพงแสน</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-gray-900 mb-2">หอพักนกฮูก4</h3>
@@ -251,22 +240,30 @@ export default function Contact() {
           <div>
             <h5 className="font-bold mb-4">หน้าเรา</h5>
             <ul className="space-y-2 text-red-100 text-sm">
-              <li><a href="/" className="hover:text-white">เกี่ยวกับเรา</a></li>
-              <li><a href="#" className="hover:text-white">เทรนเนอร์ทั้งหมด</a></li>
-              <li><a href="#" className="hover:text-white">รีวิวลูกค้า</a></li>
-              <li><a href="/contactus" className="hover:text-white">ติดต่อเรา</a></li>
+              <li>
+                <a href="/contactus" className="hover:text-white">เกี่ยวกับเรา</a>
+              </li>
+              <li>
+                <a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a>
+              </li>
+              <li>
+                <a href="/review" className="hover:text-white">รีวิวลูกค้า</a>
+              </li>
+              <li>
+                <a href="/contactus" className="hover:text-white">ติดต่อเรา</a>
+              </li>
             </ul>
           </div>
           <div>
             <h5 className="font-bold mb-4">social links</h5>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center cursor-pointer hover:bg-blue-700">
+              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                 <span className="text-white text-sm">f</span>
               </div>
-              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center cursor-pointer hover:bg-pink-600">
+              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">ig</span>
               </div>
-              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center cursor-pointer hover:bg-red-600">
+              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">yt</span>
               </div>
             </div>

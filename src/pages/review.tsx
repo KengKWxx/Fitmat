@@ -19,7 +19,7 @@ export default function Review() {
             <nav className="hidden md:flex items-center gap-8">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "#" },
+                { name: "trainers", href: "/trainer" },
                 { name: "reviews", href: "/review" },
                 { name: "contact us", href: "/contactus" }
               ].map((item) => (
@@ -55,7 +55,7 @@ export default function Review() {
             <nav className="flex flex-col gap-6">
               {[
                 { name: "home", href: "/" },
-                { name: "trainers", href: "#" },
+                { name: "trainers", href: "/trainer" },
                 { name: "reviews", href: "/review" },
                 { name: "contact us", href: "/contactus" }
               ].map((item) => (
@@ -206,22 +206,30 @@ export default function Review() {
           <div>
             <h5 className="font-bold mb-4">หน้าเรา</h5>
             <ul className="space-y-2 text-red-100 text-sm">
-              <li><a href="/" className="hover:text-white">เกี่ยวกับเรา</a></li>
-              <li><a href="#" className="hover:text-white">เทรนเนอร์ทั้งหมด</a></li>
-              <li><a href="/review" className="hover:text-white">รีวิวลูกค้า</a></li>
-              <li><a href="/contactus" className="hover:text-white">ติดต่อเรา</a></li>
+              <li>
+                <a href="/contactus" className="hover:text-white">เกี่ยวกับเรา</a>
+              </li>
+              <li>
+                <a href="/trainer" className="hover:text-white">เทรนเนอร์ทั้งหมด</a>
+              </li>
+              <li>
+                <a href="/review" className="hover:text-white">รีวิวลูกค้า</a>
+              </li>
+              <li>
+                <a href="/contactus" className="hover:text-white">ติดต่อเรา</a>
+              </li>
             </ul>
           </div>
           <div>
             <h5 className="font-bold mb-4">social links</h5>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center cursor-pointer hover:bg-blue-700">
+              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                 <span className="text-white text-sm">f</span>
               </div>
-              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center cursor-pointer hover:bg-pink-600">
+              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">ig</span>
               </div>
-              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center cursor-pointer hover:bg-red-600">
+              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm">yt</span>
               </div>
             </div>
