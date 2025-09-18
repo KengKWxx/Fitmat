@@ -118,6 +118,14 @@ export default function RegisterPage() {
             {loading ? "กำลังสมัคร..." : "Register"}
           </button>
         </form>
+        <div className="w-full flex justify-center mt-4 text-xs">
+          <a
+            href="/login"
+            className="text-blue-800 font-bold hover:underline text-base"
+          >
+            Login
+          </a>
+        </div>
       </div>
     </main>
   );
