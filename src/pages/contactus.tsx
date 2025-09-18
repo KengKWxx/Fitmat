@@ -1,0 +1,278 @@
+import React, { useState } from "react";
+
+export default function Contact() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <main className="w-full text-gray-800">
+      {/* ===== Header ===== */}
+      <header className="absolute top-0 inset-x-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-16 sm:h-20 flex items-center justify-between">
+            {/* โลโก้ */}
+            <a href="/" className="flex items-center gap-2">
+              <span className="text-white text-2xl sm:text-3xl font-extrabold tracking-wide">
+                <span className="text-red-500">FIT</span>MATE
+              </span>
+            </a>
+
+            {/* เมนู desktop */}
+            <nav className="hidden md:flex items-center gap-8">
+              {[
+                { name: "home", href: "/" },
+                { name: "trainers", href: "#" },
+                { name: "reviews", href: "/review" },
+                { name: "contact us", href: "/contactus" }
+              ].map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white text-lg font-semibold hover:text-red-400 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+
+            {/* Hamburger icon mobile */}
+            <button
+              className="md:hidden flex items-center text-white"
+              onClick={() => setOpen(!open)}
+              aria-label="Open menu"
+            >
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        {/* Mobile menu */}
+        {open && (
+          <div className="md:hidden bg-red-600 px-6 py-4">
+            <nav className="flex flex-col gap-4">
+              {[
+                { name: "home", href: "/" },
+                { name: "trainers", href: "#" },
+                { name: "reviews", href: "/review" },
+                { name: "contact us", href: "/contactus" }
+              ].map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white text-lg font-semibold"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      {/* ===== Hero Section ===== */}
+      <section className="relative overflow-hidden">
+        <div className="relative h-[300px] sm:h-[400px]">
+          <img
+            src="/images/contact-hero.jpg"
+            alt="Contact us"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8">
+            <div className="h-full flex flex-col justify-center">
+              <h1 className="text-white font-extrabold leading-tight text-4xl sm:text-6xl">
+                contact us
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Contact Content ===== */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* ข้อมูลการติดต่อ */}
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                อยากเริ่มต้นแปลี่ยนสุขภาพ?<br />
+                ติดต่อเราได้เลยวันนี้!
+              </h2>
+              <p className="text-gray-600 mb-8">
+                ทีมงานของเราพร้อมให้คำปรึกษา ออกแบบโปรแกรมออกกำลังกาย<br />
+                และโภชนาการเพื่อให้คุณบรรลุเป้าหมายอย่างมีประสิทธิภาพ<br />
+                ไม่ว่าจะเป็นการลดน้ำหนัก เพิ่มกล้ามเนื้อ หรือเสริมสร้างสุขภาพ
+              </p>
+
+              {/* แผนที่ */}
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg mb-8">
+                <div className="h-64 relative bg-green-100">
+                  {/* แผนที่แบบ iframe จาก Google Maps */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5446449889434!2d100.19329931539204!3d14.041844290151563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e27ee8c7f1c5cd%3A0x8a3e3c0a3c0a3c0a!2z4Lir4Lit4Lie4Lix4LiB4LiZ4LiB4Lir4Li54LiB4LmAIDQg4LiB4Liz4LmB4Lie4LiH4LmB4Liq4LiZ!5e0!3m2!1sth!2sth!4v1694000000000!5m2!1sth!2sth"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="แผนที่หอพักนกฮูก4 กำแพงแสน"
+                  />
+                  
+                  {/* Fallback กรณีที่ iframe ไม่แสดง */}
+                  <div className="absolute inset-0 bg-green-100 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <div className="w-8 h-8 bg-white rounded-full"></div>
+                      </div>
+                      <p className="text-gray-600 font-medium">หอพักนกฮูก4 กำแพงแสน</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-gray-900 mb-2">หอพักนกฮูก4</h3>
+                  <p className="text-gray-600 text-sm">
+                    หอพักนกฮูก4<br />
+                    ตำบลกำแพงแสน<br />
+                    อำเภอกำแพงแสน นครปฐม 73140<br />
+                    ประเทศไทย
+                  </p>
+                </div>
+              </div>
+
+              <button className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 active:bg-red-700 active:scale-95 transition-all duration-200 cursor-pointer">
+                การติดต่อ
+              </button>
+            </div>
+
+            {/* ฟอร์มติดต่อ */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
+                เราช่วยคุณได้อย่างไร?
+              </h3>
+              <p className="text-gray-600 text-center mb-8">
+                กรุณากรอกข้อมูลการติดต่อ เราจะติดต่อกลับภายใน 24 ชั่วโมง
+              </p>
+
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      ชื่อของคุณ
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Please enter your full name"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      อีเมล
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    เบอร์โทรศัพท์
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    หัวข้อที่อยากปรึกษา
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Add subject here"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    ข้อความของคุณ
+                  </label>
+                  <textarea
+                    rows={4}
+                    placeholder="Describe your message here"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 active:bg-red-700 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Footer ===== */}
+      <footer className="bg-red-600 text-white py-12">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 className="text-2xl font-extrabold mb-4">FITMATE</h4>
+            <p className="text-red-100 text-sm leading-6">
+              เปลี่ยนพลังงานให้เป็นรูปร่างในแบบของคุณ ออกแบบโปรแกรมเวิร์คเอาต์ให้เหมาะกับแต่ละคน
+            </p>
+          </div>
+          <div>
+            <h5 className="font-bold mb-4">สำนักงานใหญ่</h5>
+            <p className="text-red-100 text-sm leading-6">
+              FitMate Co., Ltd.<br />
+              123 ถนนสุขภาพดี<br />
+              เขตออกกำลัง กรุงเทพมหานคร 10110<br />
+              ประเทศไทย
+            </p>
+          </div>
+          <div>
+            <h5 className="font-bold mb-4">หน้าเรา</h5>
+            <ul className="space-y-2 text-red-100 text-sm">
+              <li><a href="/" className="hover:text-white">เกี่ยวกับเรา</a></li>
+              <li><a href="#" className="hover:text-white">เทรนเนอร์ทั้งหมด</a></li>
+              <li><a href="#" className="hover:text-white">รีวิวลูกค้า</a></li>
+              <li><a href="/contactus" className="hover:text-white">ติดต่อเรา</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold mb-4">social links</h5>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center cursor-pointer hover:bg-blue-700">
+                <span className="text-white text-sm">f</span>
+              </div>
+              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center cursor-pointer hover:bg-pink-600">
+                <span className="text-white text-sm">ig</span>
+              </div>
+              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center cursor-pointer hover:bg-red-600">
+                <span className="text-white text-sm">yt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
