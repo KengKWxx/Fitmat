@@ -89,32 +89,49 @@ export default function Trainer() {
           </div>
         </div>
       </section>
-
-      {/* ===== จุดเด่นเทรนเนอร์ ===== */}
-      <section className="bg-white py-8">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-          <div className="md:col-span-2 flex flex-col items-start md:items-center md:text-left">
-            <div className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold mb-4">
-              จุดเด่นเทรนเนอร์ของเรา
-            </div>
-            <div className="text-gray-800 font-bold mb-2">
-              เทรนเนอร์มืออาชีพของเรา<br />
-              พร้อมช่วยคุณบรรลุสู่เป้าหมายด้านสุขภาพและฟิตเนส<br />
-              ด้วยประสบการณ์และความเข้าใจในแต่ละเป้าหมายของลูกค้าอย่างแท้จริง
+      {/* ===== จุดเด่นของทีมเทรนเนอร์ ===== */}
+      <section className="bg-white py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
+            <div className="w-full">
+              <div className="inline-block bg-red-500 text-white px-6 py-2 rounded-full font-bold text-base mb-4 shadow-lg shadow-red-200/60">
+                จุดเด่นของทีมเทรนเนอร์
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-2 leading-snug drop-shadow">
+                เทรนเนอร์มืออาชีพของเรา<br />
+                พร้อมช่วยคุณบรรลุเป้าหมายด้านสุขภาพและฟิตเนส<br />
+                ด้วยประสบการณ์และความเข้าใจในแต่ละเป้าหมายของลูกค้าอย่างแท้จริง
+              </h2>
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center mb-2">
-              <img src="/images/icon1.png" alt="" className="w-10 h-10 mb-1" />
-              <span className="text-red-500 font-bold text-sm">พร้อมให้คำปรึกษาและแนะนำ</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center bg-gradient-to-br from-red-50 via-white to-red-100 rounded-2xl shadow-lg py-8 px-4 hover:scale-105 transition-transform duration-200 border border-red-100">
+              <div className="bg-white rounded-full p-4 mb-3 shadow-lg shadow-red-100">
+                <img src="/images/icon1.png" alt="icon1" className="w-12 h-12" />
+              </div>
+              <div className="font-bold text-gray-800 mb-1 text-lg">พร้อมให้คำปรึกษาฟรีก่อนเริ่มทุกคอร์ส</div>
+              <div className="text-gray-500 text-sm">สอบถามได้ทุกเรื่องสุขภาพ</div>
             </div>
-            <div className="flex flex-col items-center mb-2">
-              <img src="/images/icon2.png" alt="" className="w-10 h-10 mb-1" />
-              <span className="text-red-500 font-bold text-sm">ประสบการณ์จริง</span>
+            <div className="flex flex-col items-center bg-gradient-to-br from-red-50 via-white to-red-100 rounded-2xl shadow-lg py-8 px-4 hover:scale-105 transition-transform duration-200 border border-red-100">
+              <div className="bg-white rounded-full p-4 mb-3 shadow-lg shadow-red-100">
+                <img src="/images/icon2.png" alt="icon2" className="w-12 h-12" />
+              </div>
+              <div className="font-bold text-gray-800 mb-1 text-lg">เชี่ยวชาญกับงานเทรนนิ่งและการดีไซน์</div>
+              <div className="text-gray-500 text-sm">ออกแบบโปรแกรมเฉพาะบุคคล</div>
             </div>
-            <div className="flex flex-col items-center">
-              <img src="/images/icon3.png" alt="" className="w-10 h-10 mb-1" />
-              <span className="text-red-500 font-bold text-sm">รีวิวลูกค้ากว่า 500+ คน</span>
+            <div className="flex flex-col items-center bg-gradient-to-br from-red-50 via-white to-red-100 rounded-2xl shadow-lg py-8 px-4 hover:scale-105 transition-transform duration-200 border border-red-100">
+              <div className="bg-white rounded-full p-4 mb-3 shadow-lg shadow-red-100">
+                <img src="/images/icon3.png" alt="icon3" className="w-12 h-12" />
+              </div>
+              <div className="font-bold text-gray-800 mb-1 text-lg">เทรนเนอร์ได้รับการรับรองจากสถาบันชั้นนำ</div>
+              <div className="text-gray-500 text-sm">มั่นใจในมาตรฐาน</div>
+            </div>
+            <div className="flex flex-col items-center bg-gradient-to-br from-red-50 via-white to-red-100 rounded-2xl shadow-lg py-8 px-4 hover:scale-105 transition-transform duration-200 border border-red-100">
+              <div className="bg-white rounded-full p-4 mb-3 shadow-lg shadow-red-100">
+                <img src="/images/icon4.png" alt="icon4" className="w-12 h-12" />
+              </div>
+              <div className="font-bold text-gray-800 mb-1 text-lg">รีวิวจากลูกค้ากว่า 500+ คน</div>
+              <div className="text-gray-500 text-sm">ความประทับใจจริงจากผู้ใช้บริการ</div>
             </div>
           </div>
         </div>

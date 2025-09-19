@@ -15,13 +15,13 @@ export default function Home() {
   const [reviewIndex, setReviewIndex] = useState(0);
 
   const reviews = [
-    { img: "/images/review1.jpg", name: "ลูกค้าคนที่ 1", text: "รีวิว..." },
-    { img: "/images/review2.jpg", name: "ลูกค้าคนที่ 2", text: "รีวิว..." },
-    { img: "/images/review3.jpg", name: "ลูกค้าคนที่ 3", text: "รีวิว..." },
-    { img: "/images/review4.jpg", name: "ลูกค้าคนที่ 4", text: "รีวิว..." },
-    { img: "/images/review5.jpg", name: "ลูกค้าคนที่ 5", text: "รีวิว..." },
-    { img: "/images/review6.jpg", name: "ลูกค้าคนที่ 6", text: "รีวิว..." },
-  ];
+  { img: "/images/review1.jpg", name: "ลูกค้าคนที่ 1", text: "เทรนเนอร์ใส่ใจมาก โปรแกรมออกกำลังกายเหมาะกับเรา ทำตามแล้วเห็นผลจริง!" },
+  { img: "/images/review2.jpg", name: "ลูกค้าคนที่ 2", text: "จองคิวง่าย สะดวก เทรนเนอร์ให้คำแนะนำดีมาก ประทับใจสุดๆ" },
+  { img: "/images/review3.jpg", name: "ลูกค้าคนที่ 3", text: "ได้เทรนเนอร์ที่เข้าใจเป้าหมายของเรา ทำให้มีกำลังใจออกกำลังกายต่อเนื่อง" },
+  { img: "/images/review4.jpg", name: "ลูกค้าคนที่ 4", text: "บริการดีมาก เทรนเนอร์เป็นมืออาชีพและเป็นกันเอง แนะนำเลยครับ" },
+  { img: "/images/review5.jpg", name: "ลูกค้าคนที่ 5", text: "หลังใช้บริการ รู้สึกสุขภาพดีขึ้น น้ำหนักลดลงตามเป้าหมาย ขอบคุณมากครับ" },
+  { img: "/images/review6.jpg", name: "ลูกค้าคนที่ 6", text: "เหมาะกับคนที่ไม่มีเวลาไปฟิตเนส เทรนออนไลน์ก็สนุกและได้ผลจริง" },
+];
 
   const showReviews = [
     reviews[reviewIndex % reviews.length],
