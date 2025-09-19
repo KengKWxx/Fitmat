@@ -171,33 +171,61 @@ export default function Home() {
       </section>
 
       {/* ===== รีวิวจากลูกค้า ===== */}
-      <section className="relative py-14 sm:py-16 bg-gray-100">
-        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-red-600 mb-12">
+      <section
+        className="relative py-16 sm:py-20 bg-gray-100 overflow-hidden"
+      >
+        {/* ลวดลาย background */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <svg width="100%" height="100%">
+            <circle cx="10%" cy="20%" r="60" fill="#fbbf24" fillOpacity="0.08" />
+            <circle cx="90%" cy="80%" r="80" fill="#f87171" fillOpacity="0.07" />
+            <circle cx="50%" cy="10%" r="40" fill="#f87171" fillOpacity="0.06" />
+            <circle cx="80%" cy="30%" r="30" fill="#fbbf24" fillOpacity="0.06" />
+          </svg>
+        </div>
+        <h2 className="relative z-10 text-center text-3xl sm:text-4xl font-extrabold text-gray-800 drop-shadow-lg mb-12 tracking-wide">
           รีวิวจากลูกค้า
         </h2>
 
-        <div className="max-w-4xl mx-auto flex items-center gap-4 px-6">
+        <div className="relative z-10 max-w-5xl mx-auto flex items-center gap-4 px-6">
           <button
             onClick={handlePrev}
-            className="hidden md:inline-flex w-10 h-10 rounded-full bg-white shadow hover:bg-red-100 text-red-500 font-bold text-2xl items-center justify-center transition"
+            className="hidden md:inline-flex w-14 h-14 rounded-full bg-white shadow-xl hover:bg-yellow-100 text-red-500 font-bold text-3xl items-center justify-center transition-all duration-200 border-2 border-red-200 hover:scale-110"
             aria-label="ก่อนหน้า"
+            style={{ boxShadow: "0 4px 24px 0 rgba(251,191,36,0.10)" }}
           >
             &lt;
           </button>
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-10">
             {showReviews.map((review, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center"
+                className="relative bg-white rounded-3xl shadow-2xl p-8 text-center border border-yellow-100 hover:border-yellow-400 transition-all duration-300 group hover:scale-105"
+                style={{
+                  boxShadow: "0 8px 32px 0 rgba(251,191,36,0.12)",
+                  transition: "transform 0.3s cubic-bezier(.4,2,.6,1)",
+                }}
               >
+                {/* แถบเหลืองบน card */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <div className="w-8 h-4 bg-yellow-400 rounded-b-xl shadow-md"></div>
+                </div>
+                {/* ไอคอนคำพูด */}
+                <svg
+                  className="absolute -top-10 left-1/2 -translate-x-1/2 w-10 h-10 text-yellow-300 opacity-80"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17c-2.21 0-4-1.79-4-4V7c0-2.21 1.79-4 4-4h10c2.21 0 4 1.79 4 4v6c0 2.21-1.79 4-4 4h-4l-4 4v-4H7z" />
+                </svg>
                 <img
                   src={review.img}
                   alt={review.name}
-                  className="w-16 h-16 rounded-full object-cover mx-auto mb-4"
+                  className="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-4 border-yellow-300 shadow-lg group-hover:border-yellow-500 transition-all duration-300 bg-gray-100"
                 />
-                <div className="text-gray-800 font-semibold mb-2">{review.name}</div>
+                <div className="text-gray-800 font-bold mb-1">{review.name}</div>
                 <StarRow />
-                <p className="mt-6 text-gray-600 text-lg">
+                <p className="mt-6 text-gray-600 text-base min-h-[72px] font-medium">
                   "{review.text}"
                 </p>
               </div>
@@ -205,24 +233,38 @@ export default function Home() {
           </div>
           <button
             onClick={handleNext}
-            className="hidden md:inline-flex w-10 h-10 rounded-full bg-white shadow hover:bg-red-100 text-red-500 font-bold text-2xl items-center justify-center transition"
+            className="hidden md:inline-flex w-14 h-14 rounded-full bg-white shadow-xl hover:bg-yellow-100 text-red-500 font-bold text-3xl items-center justify-center transition-all duration-200 border-2 border-red-200 hover:scale-110"
             aria-label="ถัดไป"
+            style={{ boxShadow: "0 4px 24px 0 rgba(251,191,36,0.10)" }}
           >
             &gt;
           </button>
         </div>
+        {/* จุด indicator */}
+        <div className="relative z-10 flex justify-center gap-2 mt-10">
+          {reviews.map((_, idx) => (
+            <span
+              key={idx}
+              className={`w-3 h-3 rounded-full transition-all duration-300 border-2 border-yellow-300 ${
+                idx === reviewIndex % reviews.length
+                  ? "bg-yellow-400 shadow-lg scale-125"
+                  : "bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
         {/* ปุ่ม mobile */}
-        <div className="flex justify-center gap-4 mt-6 md:hidden">
+        <div className="relative z-10 flex justify-center gap-4 mt-6 md:hidden">
           <button
             onClick={handlePrev}
-            className="w-10 h-10 rounded-full bg-white shadow hover:bg-red-100 text-red-500 font-bold text-2xl flex items-center justify-center transition"
+            className="w-10 h-10 rounded-full bg-white shadow-lg hover:bg-yellow-100 text-red-500 font-bold text-2xl flex items-center justify-center transition-all duration-200 border-2 border-red-200"
             aria-label="ก่อนหน้า"
           >
             &lt;
           </button>
           <button
             onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-white shadow hover:bg-red-100 text-red-500 font-bold text-2xl flex items-center justify-center transition"
+            className="w-10 h-10 rounded-full bg-white shadow-lg hover:bg-yellow-100 text-red-500 font-bold text-2xl flex items-center justify-center transition-all duration-200 border-2 border-red-200"
             aria-label="ถัดไป"
           >
             &gt;
@@ -357,31 +399,36 @@ export default function Home() {
       </section>
 
       {/* ===== CTA Section ===== */}
-      <section className="py-16 bg-gray-300 relative">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-gray-400 to-gray-500 text-white p-8 rounded-2xl flex items-center justify-between relative overflow-hidden">
+      <section className="py-10 bg-[#f3f4f6] relative overflow-hidden">
+        {/* ของตกแต่ง: วงกลม/สี่เหลี่ยมโปร่งแสงแบบกลมกลืน */}
+        <div className="absolute -top-24 -left-24 w-56 h-56 bg-yellow-100 rounded-full opacity-40 z-0"></div>
+        <div className="absolute top-10 left-1/4 w-24 h-24 bg-blue-100 rounded-full opacity-30 z-0"></div>
+        <div className="absolute -bottom-16 right-1/4 w-32 h-32 bg-red-100 rounded-full opacity-30 z-0"></div>
+        <div className="absolute top-1/2 right-0 w-20 h-20 bg-yellow-200 rounded-lg opacity-30 z-0"></div>
+        <div className="absolute top-0 right-10 w-24 h-24 bg-pink-100 rounded-lg opacity-20 z-0"></div>
+        <div className="max-w-3xl mx-auto px-2 relative z-10">
+          <div className="bg-white/90 text-gray-900 p-5 sm:p-7 rounded-xl flex flex-col sm:flex-row items-center justify-between relative overflow-hidden shadow-md gap-4 sm:gap-0">
             {/* รูป NEED HELP? ด้านซ้าย */}
-            <div className="flex items-center z-10">
-              <div className="relative mr-6">
+            <div className="flex items-center z-10 min-w-[120px]">
+              <div className="relative mr-3">
                 {/* กระดาษสีต่างๆ */}
-                <div className="absolute -rotate-12 w-20 h-16 bg-yellow-400 rounded-lg"></div>
-                <div className="absolute rotate-6 w-20 h-16 bg-pink-400 rounded-lg"></div>
-                <div className="w-20 h-16 bg-blue-400 rounded-lg flex items-center justify-center relative z-10">
-                  <span className="text-black font-bold text-sm leading-tight">NEED<br/>HELP?</span>
+                <div className="absolute -rotate-12 w-14 h-10 bg-yellow-400 rounded-lg"></div>
+                <div className="absolute rotate-6 w-14 h-10 bg-pink-400 rounded-lg"></div>
+                <div className="w-14 h-10 bg-blue-400 rounded-lg flex items-center justify-center relative z-10">
+                  <span className="text-black font-bold text-xs leading-tight">NEED<br/>HELP?</span>
                 </div>
               </div>
-              <div className="text-left">
-                <h3 className="text-xl font-bold">"อยากเริ่มต้นแปลี่ยนตัวเองใช่ไหม?"</h3>
-                <p className="text-gray-200 text-sm">สมัครรับคำแนะนำฟรีจาก เทรนเนอร์และผู้เชี่ยวชาญ พิเศษก่อนใคร</p>
-              </div>
             </div>
-            
+            {/* ข้อความ */}
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-bold mb-1">"อยากเริ่มต้นแปลี่ยนตัวเองใช่ไหม?"</h3>
+              <p className="text-gray-700 text-xs sm:text-sm">สมัครรับคำแนะนำฟรีจาก เทรนเนอร์และผู้เชี่ยวชาญ พิเศษก่อนใคร</p>
+            </div>
             {/* Silhouette ด้านขวา */}
-            <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
-              <div className="w-20 h-24 bg-yellow-600 opacity-80 rounded-lg transform rotate-12"></div>
+            <div className="absolute right-4 bottom-2 z-0">
+              <div className="w-14 h-16 bg-yellow-200 opacity-30 rounded-lg rotate-12"></div>
             </div>
-            
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 active:scale-95 transition-all duration-200 cursor-pointer z-10">
+            <button className="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 active:scale-95 transition-all duration-200 cursor-pointer z-10 shadow text-sm sm:text-base">
               สมัครเลย
             </button>
           </div>
@@ -445,7 +492,7 @@ export default function Home() {
                 <img src="/images/ig001.png" alt="Instagram" className="w-8 h-8 object-cover" />
               </a>
               <a
-                href="https://www.youtube.com/@%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%E0%B8%A1%E0%B8%81"
+                href="https://www.youtube.com/@%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B8%9A%E0%B8%A1%E0%B8%81"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded flex items-center justify-center transition"
