@@ -74,20 +74,19 @@ export default function Review() {
       </header>
 
       {/* ===== Hero Section ===== */}
+      {/* ===== Hero Section ===== */}
       <section className="relative overflow-hidden">
-        <div className="relative h-[300px] sm:h-[400px]">
+        <div className="relative h-[420px] sm:h-[520px] lg:h-[600px]">
           <img
-            src="/images/review-hero.jpg"
-            alt="Reviews"
+            src="/images/hero-trainer.jpg"
+            alt="Personal training"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8">
-            <div className="h-full flex flex-col justify-center">
-              <h1 className="text-white font-extrabold leading-tight text-4xl sm:text-6xl">
-                Reviews
-              </h1>
-            </div>
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+            <h1 className="text-white font-extrabold leading-tight text-2xl sm:text-4xl md:text-5xl mb-4">
+              Review
+            </h1>
           </div>
         </div>
       </section>
@@ -197,10 +196,12 @@ export default function Review() {
           <div>
             <h5 className="font-bold mb-4">สำนักงานใหญ่</h5>
             <p className="text-red-100 text-sm leading-6">
-              FitMate Co., Ltd.<br />
-              123 ถนนสุขภาพดี<br />
-              เขตออกกำลัง กรุงเทพมหานคร 10110<br />
-              ประเทศไทย
+              มหาวิทยาลัยเกษตรศาสตร์<br />
+              วิทยาเขตกำแพงแสน<br />
+              1 หมู่ 6 ถนนมาลัยแมน<br />
+              ตำบลกำแพงแสน อำเภอกำแพงแสน<br />
+              จังหวัดนครปฐม 73140<br />
+              ประเทศไทย 
             </p>
           </div>
           <div>
@@ -223,15 +224,30 @@ export default function Review() {
           <div>
             <h5 className="font-bold mb-4">social links</h5>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                <span className="text-white text-sm">f</span>
-              </div>
-              <div className="w-8 h-8 bg-pink-500 rounded flex items-center justify-center">
-                <span className="text-white text-sm">ig</span>
-              </div>
-              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center">
-                <span className="text-white text-sm">yt</span>
-              </div>
+              <a
+                href="https://www.facebook.com/ITKUKPS/?locale=th_TH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded flex items-center justify-center transition"
+              >
+                <img src="/images/face001.png" alt="Facebook" className="w-8 h-8 object-cover" />
+              </a>
+              <a
+                href="https://www.instagram.com/flaskukps/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded flex items-center justify-center transition"
+              >
+                <img src="/images/ig001.png" alt="Instagram" className="w-8 h-8 object-cover" />
+              </a>
+              <a
+                href="https://www.youtube.com/@%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%A8%E0%B8%B4%E0%B8%A5%E0%B8%9B%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C%E0%B8%A1%E0%B8%81"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded flex items-center justify-center transition"
+              >
+                <img src="/images/yt001.png" alt="YouTube" className="w-8 h-8 object-cover" />
+              </a>
             </div>
           </div>
         </div>
